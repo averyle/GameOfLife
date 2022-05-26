@@ -1,0 +1,77 @@
+Ah, the game of life.  This is a cellular automation simulator.  The rules are
+very simple.  The board is a grid.  Each grid square can hold at most one cell.
+For a cell to survive from generation to generation it needs two or three
+neighbors.  Too many neighbors causes the cell to starve.  Too few neighbors
+causes an incurable case of ennui.  All is not lost.  If a grid square has
+exactly three neighbors, a new cell is born, which is kind of strange when you
+think about it.
+
+There are lots of variations on this game.  Technically, this is Conway's Game
+of Life and is a B3/S23 game.  That is, cells survive with two or three
+neighbors and are born with exactly 3 neighbors.  This game can also be extended
+into the real domain or more dimensions.  We, however, will stick with Conway's
+original automation.
+
+I have provided a very naive evolution implementation called evolve.  It works,
+but it is slow.  See how fast you can make it run.
+
+The outcomes of this lab are:
+   Strengthen your C programming 
+   Understand and apply the loop optimizations we discussed in class:
+    1) Remove loop inefficiencies
+    2) Reduce procedure calls
+    3) Reduce unnecessary memory references
+    4) Loop unrolling
+
+The experimental set-up is implemented in a library called liblife.a  Since
+it has solutions, I'm providing it as a binary in my home directory:
+  /home/clausoa/lib/liblife.a
+
+The provided Makefile is set up to link this library into your solution.  
+
+There are two ways to run the test program: with our without a window.
+Without a window, the program runs the test cases against the provided
+evolution methods as quickly as possible.  After about 100 generations, it
+stops and reports the average performance of each method.  
+
+If you favor something a little more animated, and I know you do, run it test
+program with windowing.  This is the default.  This is basically the same
+set-up, but it displays the current generation and the relative performance
+of the provided methods.  The scores are jumpy for a little while, but they
+eventually calm down.  When you close the window, the final scores are
+displayed on the console.
+
+There is a Makefile for this project.  You should only need to run the
+'make check' target.  That is:
+
+  $ make check
+   Simple:  35.41
+   jobss:   28.92
+   gatesb:  19.03
+   turinga: 15.53
+   lovelaa: 8.38
+
+Of course your values will be different.  
+
+I have one final piece of advice.  You are free to add as many test methods as
+you want and I encourage you to do this.  Copy the code, give it a new name, and
+add the new evolution method to the test harness: add_method.  This will let you
+see if you are making improvements.  Have fun.
+
+Grades:
+ 40 points for beating jobss
+ 30 points for beating gatesb
+ 20 points for beating touringa
+ 10 points for beating lovelaa
+
+
+
+
+
+
+
+
+
+  
+ 
+
